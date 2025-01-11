@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DJ STORE</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+</head>
+
+<body>
+    
+    <div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+     </div>
+    <header>
+        <div class="container">
+            <div class="logo"><img src="backgr/DJ-Shop-Logo.png" alt="DJ Shop Logo"></div>
+            <nav>
+                <ul>
+                    <li><a href="#">Магазин</a></li>
+                    <li class="dropdown">
+                        <a href="#">Услуги</a>
+                        <ul class="dropdown-content">
+                            <li><a href="tehnika.html">Техника под наем</a></li>
+                            <li><a href="instalacii.html">Инсталации audio & light</a></li>
+                            <li><a href="producentsko.html">Продуцентско студио под наем</a></li>
+                            <li><a href="djstudio.html">DJ студио под наем</a></li>
+                            <li><a href="serviz.html">Сервиз</a></li>
+                            <li><a href="kursove_dj.html">Курсове за DJ</a></li>
+                            <li><a href="kursove_producirane.html">Курсове за продуциране</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Новини</a></li>
+                    <li><a href="contact.html">Контакти</a></li>
+                    
+<div class="dropdown">
+    <i class="fas fa-user profile-icon"></i>
+    <div id="profile-menu" class="dropdown-content">
+        <a href="logout.php">Излез</a>
+    </div>
+</div>
+                    <li>
+                        
+<i class="fas fa-shopping-cart cart-icon"></i>
+                    </li>
+                </ul>
+            </nav>
+           
+        </div>
+        
+        
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Име на продукт..." onkeyup="searchProducts()" />
+        </div>
+    </header>
+    
+    <div class="slider">
+        <div class="list">
+            <div class="item">
+                <img src="slider/401453-vertical-dj-background-1920x1080-for-iphone-6.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="slider/wp1811488-martin-garrix-wallpapers.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="slider/DJ.webp" alt="">
+            </div>
+            <div class="item">
+                <img src="slider/Uslugi-producentsko-studio-pod-naem-86d1c16c.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="slider/StockCake-Outdoor DJ Setup_1736292811.jpg" alt="">
+            </div>
+        </div>
+        <div class="buttons">
+            <button id="prev"><</button>
+            <button id="next">></button>
+        </div>
+        <ul class="dots">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    
+
+    
+
+    <main>
+        <div class="content">
+            <div class="cart" id="cart" style="display: none;">
+                <h2>Кошница</h2>
+                <div class="cart-items" id="cart-items"></div>
+                <div class="total" id="total">Общо: 0лв</div>
+                <button class="order-button" onclick="placeOrder()">Поръчай</button>
+            </div>
+            <div id="category-info" style="margin: 20px 0; font-size: 20px; font-weight: bold;"></div>
+            <h1>DJ техника</h1>
+            <div class="categories">
+                <div class="category" onclick="toggleProducts('mixers')">DJ миксери</div>
+                <div class="category" onclick="toggleProducts('players')">DJ плейъри</div>
+                <div class="category" onclick="toggleProducts('controllers')">DJ контролери</div>
+                <div class="category" onclick="toggleProducts('turntables')">DJ грамофони</div>
+                <div class="category" onclick="toggleProducts('effects')">DJ ефектори / семплери</div>
+                <div class="category" onclick="toggleProducts('headphones')">DJ слушалки</div>
+                <div class="category" onclick="toggleProducts('cases')">DJ кейсове, чанти и раници</div>
+                <div class="category" onclick="toggleProducts('stands')">DJ стойки</div>
+                <div class="category" onclick="toggleProducts('software')">DJ софтуер и интерфейси</div>
+                <div class="category" onclick="toggleProducts('cables')">DJ кабели</div>
+                <div class="category" onclick="toggleProducts('monitors')">Мониторни колони</div>
+                <div class="category" onclick="toggleProducts('production')">Музикално продуциране</div>
+                <div class="category" onclick="toggleProducts('usb')">USB Flash / SD Card памети</div>
+                <div class="category" onclick="toggleProducts('tables')">DJ маси - пултове</div>
+                <div class="category" onclick="toggleProducts('accessories')">Аксесоари / резервни части</dIv>
+                <div class="category" onclick="toggleProducts('hearing')">Защита на слуха</div>
+            </div>
+
+            
+            <h2 id="category-title" style="display: none;"></h2>
+            
+<div class="products" id="mixers" style="display: none;">
+    <div class="product" onclick="openModal('PLAYdifferently: MODEL 1', 200, 'DJ миксери/preview6-f9cbf608-fotor-bg-remover-2025010723815.png', 'Този миксер предлага не само отлично качество на звука, но и много иновационни функции, допринасящи за съвършено DJ преживяване.')">
+        <h2>PLAYdifferently: MODEL 1</h2>
+        <img src="DJ миксери/preview6-f9cbf608-fotor-bg-remover-2025010723815.png" alt="PLAYdifferently: MODEL 1">
+        <p>Цена: 200лв</p>
+        <button class="buy-button" onclick="event.stopPropagation(); openModal('PLAYdifferently: MODEL 1', 200, 'preview6-f9cbf608.webp', 'Този миксер предлага не само отлично качество на звука, но и много иновационни функции, допринасящи за съвършено DJ преживяване.')">Купи</button>
+    </div>
+    <div class="product" onclick="openModal('PLAYdifferently: MODEL 1.4', 250, 'DJ миксери/untitled-1-web-33d04152-fotor-bg-remover-2025010723830.png', 'С интуитивен интерфейс и специализирани функции за смешване, MODEL 1.4 е перфектният избор за професионални DJ.')">
+        <h2>PLAYdifferently: MODEL 1.4</h2>
+        <img src="DJ миксери/untitled-1-web-33d04152-fotor-bg-remover-2025010723830.png" alt="PLAYdifferently: MODEL 1.4">
+        <p>Цена: 250лв</p>
+        <button class="buy-button" onclick="event.stopPropagation(); openModal('PLAYdifferently: MODEL 1.4', 250, 'untitled-1-web-33d04152.webp', 'С интуитивен интерфейс и специализирани функции за смешване, MODEL 1.4 е перфектният избор за професионални DJ.')">Купи</button>
+    </div>
+    <div class="product" onclick="openModal('Allen & Heath Xone:23C', 250, 'DJ миксери/main_0fd409a8-941047d8-fotor-bg-remover-2025010723749.png', 'Лесен за използване и с компоненти от високо качество, Xone:23C е идеален за любители на DJ техниката.')">
+        <h2>Allen & Heath Xone:23C</h2>
+        <img src="DJ миксери/main_0fd409a8-941047d8-fotor-bg-remover-2025010723749.png" alt="Allen & Heath Xone:23C">
+        <p>Цена: 250лв</p>
+        <button class="buy-button" onclick="event.stopPropagation(); openModal('Allen & Heath Xone:23C', 250, 'main_0fd409a8-941047d8.webp', 'Лесен за използване и с компоненти от високо качество, Xone:23C е идеален за любители на DJ техниката.')">Купи</button>
+    </div>
+    
+</div>
+
+
+<div class="products" id="players" style="display: none;">
+    <div class="product" onclick="openModal('DJ Player 1', 300, 'DJ плейъри/CDJ-3000-top-hero-4337b81b-fotor-bg-remover-20250107231022.png', 'Този DJ плейър предлага висококачествен звук и интуитивно управление, което го прави перфектен за всеки DJ.')">
+        <h2>DJ Player 1</h2>
+        <img src="DJ плейъри/CDJ-3000-top-hero-4337b81b-fotor-bg-remover-20250107231022.png" alt="DJ Player 1">
+        <p>Цена: 300лв</p>
+        <button class="buy-button" onclick="event.stopPropagation(); openModal('DJ Player 1', 300, 'images/player1.jpg', 'Този DJ плейър предлага висококачествен звук и интуитивно управление, което го прави перфектен за всеки DJ.')">Купи</button>
+    </div>
+    <div class="product" onclick="openModal('DJ Player 2', 350, 'DJ плейъри/pioneer-cdj-700-6dd8cb0f-fotor-bg-remover-20250107231038.png', 'DJ Player 2 осигурява безпроблемно свързване с всички устройства и отличен визуален контрол върху вашите плейлисти.')">
+        <h2>DJ Player 2</h2>
+        <img src="DJ плейъри/pioneer-cdj-700-6dd8cb0f-fotor-bg-remover-20250107231038.png" alt="DJ Player 2">
+        <p>Цена: 350лв</p>
+        <button class="buy-button" onclick="event.stopPropagation(); openModal('DJ Player 2', 350, 'images/player2.jpg', 'DJ Player 2 осигурява безпроблемно свързване с всички устройства и отличен визуален контрол върху вашите плейлисти.')">Купи</button>
+    </div>
+    <div class="product" onclick="openModal('DJ Player 3', 400, 'DJ плейъри/XDJ-1000MK2-top-hero-2a1a6dd3-fotor-bg-remover-20250107231050.png', 'С множество функции и опции за персонализиране, DJ Player 3 е универсалният инструмент за всеки DJ.')">
+        <h2>DJ Player 3</h2>
+        <img src="DJ плейъри/XDJ-1000MK2-top-hero-2a1a6dd3-fotor-bg-remover-20250107231050.png" alt="DJ Player 3">
+        <p>Цена: 400лв</p>
+        <button class="buy-button" onclick="event.stopPropagation(); openModal('DJ Player 3', 400, 'images/player3.jpg', 'С множество функции и опции за персонализиране, DJ Player 3 е универсалният инструмент за всеки DJ.')">Купи</button>
+    </div>
+</div>
+
+
+<div class="products" id="controllers" style="display: none;">
+    <div class="product" onclick="openModal('Контролер 1', 500, 'DJ контролери/DDJ-GRV6_CGI_Top_3300x1886-e513cb10-fotor-bg-remover-20250107231226.png', 'Контролер 1 предлага пълен контрол върху вашите плейлисти и е идеален за начинаещи и опитни DJ.')">
+        <h2>Контролер 1</h2>
+        <img src="DJ контролери/DDJ-GRV6_CGI_Top_3300x1886-e513cb10-fotor-bg-remover-20250107231226.png" alt="Контролер 1">
+        <p>Цена: 500лв</p>
+        <button class="buy-button" onclick="event.stopPropagation(); openModal('Контролер 1', 500, 'images/controller1.jpg', 'Контролер 1 предлага пълен контрол върху вашите плейлисти и е идеален за начинаещи и опитни DJ.')">Купи</button>
+    </div>
+    <div class="product" onclick="openModal('Контролер 2', 600, 'DJ контролери/OpusQuad-5e0fcd44-fotor-bg-remover-20250107231241.png', 'Този контролер е снабден с интуитивен интерфейс и изключително чувствителност, идеален за професионални DJ.')">
+        <h2>Контролер 2</h2>
+        <img src="DJ контролери/OpusQuad-5e0fcd44-fotor-bg-remover-20250107231241.png" alt="Контролер 2">
+        <p>Цена: 600лв</p>
+        <button class="buy-button" onclick="event.stopPropagation(); openModal('Контролер 2', 600, 'images/controller2.jpg', 'Този контролер е снабден с интуитивен интерфейс и изключително чувствителност, идеален за професионални DJ.')">Купи</button>
+    </div>
+</div>
+
+
+<div class="products" id="turntables" style="display: none;">
+    <div class="product" onclick="openModal('Грамофон 1', 400, 'DJ грамофони/djm-900nxs2-main5-d8724009.png', 'С класически дизайн и качествена изработка, този грамофон е перфектен за всеки DJ.')">
+        <h2>Грамофон 1</h2>
+        <img src="DJ грамофони/djm-900nxs2-main5-d8724009.png" alt="Грамофон 1">
+        <p>Цена: 400лв</p>
+        <button class="buy-button" onclick="event.stopPropagation(); openModal('Грамофон 1', 400, 'images/turntable1.jpg', 'С класически дизайн и качествена изработка, този грамофон е перфектен за всеки DJ.')">Купи</button>
+    </div>
+    <div class="product" onclick="openModal('Грамофон 2', 450, 'DJ грамофони/Нов проект (5)2-abe31731-fotor-bg-remover-20250107231432.png', 'Грамофон 2 предлага страхотен звук и иновационни технологии, идеален за съвременните DJ.')">
+        <h2>Грамофон 2</h2>
+        <img src="DJ грамофони/Нов проект (5)2-abe31731-fotor-bg-remover-20250107231432.png" alt="Грамофон 2">
+        <p>Цена: 450лв</p>
+        <button class="buy-button" onclick="event.stopPropagation(); openModal('Грамофон 2', 450, 'images/turntable2.jpg', 'Грамофон 2 предлага страхотен звук и иновационни технологии, идеален за съвременните DJ.')">Купи</button>
+    </div>
+</div>
+
+
+<div class="products" id="effects" style="display: none;">
+    <div class="product" onclick="openModal('Ефектор 1', 200, 'DJ ефектори  семплери/toraiz-squid-top-502a5b56-fotor-bg-remover-20250107231624.pngg', 'Този ефектор осигурява богат набор от звукови ефекти, които ще направят вашите сетове уникални.')">
+        <h2>Ефектор 1</h2>
+        <img src="DJ ефектори  семплери/toraiz-squid-top-502a5b56-fotor-bg-remover-20250107231624.png" alt="Ефектор 1">
+        <p>Цена: 200лв</p>
+        <button class="buy-button" onclick="event.stopPropagation(); openModal('Ефектор 1', 200, 'images/effect1.jpg', 'Този ефектор осигурява богат набор от звукови ефекти, които ще направят вашите сетове уникални.')">Купи</button>
+    </div>
+    <div class="product" onclick="openModal('Ефектор 2', 250, 'DJ ефектори  семплери/toriaz-sp-16-main-c80a78a7-fotor-bg-remover-20250107231942.png', 'С множество настройки и опции, ефектор 2 е перфектен за всеки DJ, който иска да добави творчество към своето представление.')">
+        <h2>Ефектор 2</h2>
+        <img src="DJ ефектори  семплери/toriaz-sp-16-main-c80a78a7-fotor-bg-remover-20250107231942.png" alt="Ефектор 2">
+        <p>Цена: 250лв</p>
+        <button class="buy-button" onclick="event.stopPropagation(); openModal('Ефектор 2', 250, 'images/effect2.jpg', 'С множество настройки и опции, ефектор 2 е перфектен за всеки DJ, който иска да добави творчество към своето представление.')">Купи</button>
+    </div>
+</div>
+
+
+<div class="products" id="headphones" style="display: none;">
+    <div class="product" onclick="openModal('Слушалка 1', 150, 'DJ слушалки/audio-technica-ath-m50xrd-headphones-product-front6-0da3e032-fotor-bg-remover-20250107232049.png', 'Слушалка 1 предлага високо качество на звука и комфорт, идеален за продължителни сесии.')">
+        <h2>Слушалка 1</h2>
+        <img src="DJ слушалки/audio-technica-ath-m50xrd-headphones-product-front6-0da3e032-fotor-bg-remover-20250107232049.png" alt="Слушалка 1">
+        <p>Цена: 150лв</p>
+        <button class="buy-button" onclick="event.stopPropagation(); openModal('Слушалка 1', 150, 'images/headphone1.jpg', 'Слушалка 1 предлага високо качество на звука и комфорт, идеален за продължителни сесии.')">Купи</button>
+    </div>
+    <div class="product" onclick="openModal('Слушалка 2', 200, 'DJ слушалки/HDJ-F10_CGI_Angle_2802x33002-f21d727c-fotor-bg-remover-20250107232041.png', 'Слушалка 2 предлага професионален звук и е проектирана за DJ и музикални производители.')">
+        <h2>Слушалка 2</h2>
+        <img src="DJ слушалки/HDJ-F10_CGI_Angle_2802x33002-f21d727c-fotor-bg-remover-20250107232041.png" alt="Слушалка 2">
+        <p>Цена: 200лв</p>
+        <button class="buy-button" onclick="event.stopPropagation(); openModal('Слушалка 2', 200, 'images/headphone2.jpg', 'Слушалка 2 предлага професионален звук и е проектирана за DJ и музикални производители.')">Купи</button>
+    </div>
+</div>
+
+
+<div class="products" id="cases" style="display: none;">
+    <div class="product" onclick="openModal('Кейс 1', 100, 'DJ кейсове, чанти и раници/DJRC-MULTI1_CLOSED-f92ac22c-fotor-bg-remover-20250107232156.png', 'Кейс 1 е изработен от здрав материал, за да осигури безопасност на вашето оборудване.')">
+        <h2>Кейс 1</h2>
+        <img src="DJ кейсове, чанти и раници/DJRC-MULTI1_CLOSED-f92ac22c-fotor-bg-remover-20250107232156.png" alt="Кейс 1">
+        <p>Цена: 100лв</p>
+        <button class="buy-button" onclick="event.stopPropagation(); openModal('Кейс 1', 100, 'images/case1.jpg', 'Кейс 1 е изработен от здрав материал, за да осигури безопасност на вашето оборудване.')">Купи</button>
+    </div>
+    <div class="product" onclick="openModal('Кейс 2', 150, 'DJ кейсове, чанти и раници/REV-7_FLT0368-86d1f6c1-fotor-bg-remover-20250107232230.png', 'Кейс 2 е идеален за съхранение и транспортиране на DJ инструменти, предлагайки надеждност.')">
+        <h2>Кейс 2</h2>
+        <img src="DJ кейсове, чанти и раници/REV-7_FLT0368-86d1f6c1-fotor-bg-remover-20250107232230.png" alt="Кейс 2">
+        <p>Цена: 150лв</p>
+        <button class="buy-button" onclick="event.stopPropagation(); openModal('Кейс 2', 150, 'images/case2.jpg', 'Кейс 2 е идеален за съхранение и транспортиране на DJ инструменти, предлагайки надеждност.')">Купи</button>
+    </div>
+</div>
+
+
+<div class="products" id="stands" style="display: none;">
+    <div class="product" onclick="openModal('Стойка 1', 90, 'DJ стойки/ks22-supporto-tastiera-doppio-montante-tubi-acciaio-30-mm-5-600x814-4d992a06-fotor-bg-remover-20250107232329.png', 'Стойка 1 предлага стабилност и ергономичен дизайн, идеална за DJ сетове.')">
+        <h2>Стойка 1</h2>
+        <img src="DJ стойки/ks22-supporto-tastiera-doppio-montante-tubi-acciaio-30-mm-5-600x814-4d992a06-fotor-bg-remover-20250107232329.png" alt="Стойка 1">
+        <p>Цена: 90лв</p>
+        <button class="buy-button" onclick="event.stopPropagation(); openModal('Стойка 1', 90, 'images/stand1.jpg', 'Стойка 1 предлага стабилност и ергономичен дизайн, идеална за DJ сетове.')">Купи</button>
+    </div>
+    <div class="product" onclick="openModal('Стойка 2', 120, 'DJ стойки/Нов проект (4)6-d99167f0-fotor-bg-remover-20250107232341.png', 'Стойка 2 е регулируема и предлага максимален комфорт по време на работа.')">
+        <h2>Стойка 2</h2>
+        <img src="DJ стойки/Нов проект (4)6-d99167f0-fotor-bg-remover-20250107232341.png" alt="Стойка 2">
+        <p>Цена: 120лв</p>
+        <button class="buy-button" onclick="event.stopPropagation(); openModal('Стойка 2', 120, 'images/stand2.jpg', 'Стойка 2 е регулируема и предлага максимален комфорт по време на работа.')">Купи</button>
+    </div>
+</div>
+
+
+<div class="products" id="software" style="display: none;">
+    <div class="product" onclick="openModal('Софтуер 1', 150, 'DJ софтуер и интерфейси/rb-dmx1-main--9af5699d-fotor-bg-remover-20250107232526.png', 'Софтуер 1 предлага богат набор от функции за професионално DJ представяне.')">
+        <h2>Софтуер 1</h2>
+        <img src="DJ софтуер и интерфейси/rb-dmx1-main--9af5699d-fotor-bg-remover-20250107232526.png" alt="Софтуер 1">
+        <p>Цена: 150лв</p>
+        <button class="buy-button" onclick="event.stopPropagation(); openModal('Софтуер 1', 150, 'images/software1.jpg', 'Софтуер 1 предлага богат набор от функции за професионално DJ представяне.')">Купи</button>
+    </div>
+    <div class="product" onclick="openModal('Софтуер 2', 180, 'DJ софтуер и интерфейси/RB-LD4-75b1c894-fotor-bg-remover-20250107232539.png', 'Софтуер 2 е интуитивен и предоставя страхотни възможности за обработка на звука.')">
+        <h2>Софтуер 2</h2>
+        <img src="DJ софтуер и интерфейси/RB-LD4-75b1c894-fotor-bg-remover-20250107232539.png" alt="Софтуер 2">
+        <p>Цена: 180лв</p>
+        <button class="buy-button" onclick="event.stopPropagation(); openModal('Софтуер 2', 180, 'images/software2.jpg', 'Софтуер 2 е интуитивен и предоставя страхотни възможности за обработка на звука.')">Купи</button>
+    </div>
+</div>
+
+
+<div class="products" id="cables" style="display: none;">
+    <div class="product" onclick="openModal('Кабел 1', 20, 'DJ кабели/51NQlH-sHAS._AC_UF1000,1000_QL80_-652ed09e-fotor-bg-remover-202501084270.png', 'Кабел 1 е с високо качество, което осигурява надеждност и дълголетие.')">
+        <h2>Кабел 1</h2>
+        <img src="DJ кабели/51NQlH-sHAS._AC_UF1000,1000_QL80_-652ed09e-fotor-bg-remover-202501084270.png" alt="Кабел 1">
+        <p>Цена: 20лв</p>
+        <button class="buy-button" onclick="event.stopPropagation(); openModal('Кабел 1', 20, 'images/cable1.jpg', 'Кабел 1 е с високо качество, което осигурява надеждност и дълголетие.')">Купи</button>
+    </div>
+    <div class="product" onclick="openModal('Кабел 2', 30, 'DJ кабели/RKJX500_confezione-600x600-6f4b918c-fotor-bg-remover-2025010723286.png', 'Кабел 2 предлага отлична проводимост и е идеален за DJ технологии.')">
+        <h2>Кабел 2</h2>
+        <img src="DJ кабели/RKJX500_confezione-600x600-6f4b918c-fotor-bg-remover-2025010723286.png" alt="Кабел 2">
+        <p>Цена: 30лв</p>
+        <button class="buy-button" onclick="event.stopPropagation(); openModal('Кабел 2', 30, 'images/cable2.jpg', 'Кабел 2 предлага отлична проводимост и е идеален за DJ технологии.')">Купи</button>
+    </div>
+</div>
+
+
+<div class="products" id="monitors" style="display: none;">
+    <div class="product" onclick="openModal('Колона 1', 200, 'Мониторни колони/dm-40bt-w-front-bt-23-9e68f9ed-fotor-bg-remover-20250107233137.png', 'Колона 1 предлага мощен звук и е проектирана за DJ представления.')">
+        <h2>Колона 1</h2>
+        <img src="Мониторни колони/dm-40bt-w-front-bt-23-9e68f9ed-fotor-bg-remover-20250107233137.png" alt="Колона 1">
+        <p>Цена: 200лв</p>
+        <button class="buy-button" onclick="event.stopPropagation(); openModal('Колона 1', 200, 'images/monitor1.jpg', 'Колона 1 предлага мощен звук и е проектирана за DJ представления.')">Купи</button>
+    </div>
+    <div class="product" onclick="openModal('Колона 2', 250, 'Мониторни колони/Нов проект (1)-cb5f1b62-fotor-bg-remover-20250107233227.png', 'С отлична акустика, Колона 2 е перфектна за всяко студио или живо представление.')">
+        <h2>Колона 2</h2>
+        <img src="Мониторни колони/Нов проект (1)-cb5f1b62-fotor-bg-remover-20250107233227.png" alt="Колона 2">
+        <p>Цена: 250лв</p>
+        <button class="buy-button" onclick="event.stopPropagation(); openModal('Колона 2', 250, 'images/monitor2.jpg', 'С отлична акустика, Колона 2 е перфектна за всяко студио или живо представление.')">Купи</button>
+    </div>
+</div>
+
+
+<div class="products" id="production" style="display: none;">
+    <div class="product" onclick="openModal('Продуциране 1', 400, 'Музикално продуциране/toraiz-as-1-main-f230f5db-fotor-bg-remover-2025010723342.png', 'Продуциране 1 предлага множество инструменти за музикално производство и композиция.')">
+        <h2>Продуциране 1</h2>
+        <img src="Музикално продуциране/toraiz-as-1-main-f230f5db-fotor-bg-remover-2025010723342.png" alt="Продуциране 1">
+        <p>Цена: 400лв</p>
+        <button class="buy-button" onclick="event.stopPropagation(); openModal('Продуциране 1', 400, 'images/production1.jpg', 'Продуциране 1 предлага множество инструменти за музикално производство и композиция.')">Купи</button>
+    </div>
+    <div class="product" onclick="openModal('Продуциране 2', 450, 'Музикално продуциране/toriaz-sp-16-main-c80a78a7-fotor-bg-remover-20250107233554.png', 'Продуциране 2 е идеален инструмент за всеки музикален продуцент.')">
+        <h2>Продуциране 2</h2>
+        <img src="Музикално продуциране/toriaz-sp-16-main-c80a78a7-fotor-bg-remover-20250107233554.png" alt="Продуциране 2">
+        <p>Цена: 450лв</p>
+        <button class="buy-button" onclick="event.stopPropagation(); openModal('Продуциране 2', 450, 'images/production2.jpg', 'Продуциране 2 е идеален инструмент за всеки музикален продуцент.')">Купи</button>
+    </div>
+</div>
+
+
+<div class="products" id="usb" style="display: none;">
+    <div class="product" onclick="openModal('USB Flash 1', 15, 'USB Flash  SD Card памети/karta-pamet-sandisk---extreme-pro--128gb--sdxc--class10-30-aae3c3ae-fotor-bg-remover-2025010723408.png', 'USB Flash 1 предлага бързо прехвърляне на данни и висока надеждност.')">
+        <h2>USB Flash 1</h2>
+        <img src="USB Flash  SD Card памети/karta-pamet-sandisk---extreme-pro--128gb--sdxc--class10-30-aae3c3ae-fotor-bg-remover-2025010723408.png" alt="USB Flash 1">
+        <p>Цена: 15лв</p>
+        <button class="buy-button" onclick="event.stopPropagation(); openModal('USB Flash 1', 15, 'images/usb1.jpg', 'USB Flash 1 предлага бързо прехвърляне на данни и висока надеждност.')">Купи</button>
+    </div>
+    <div class="product" onclick="openModal('USB Flash 2', 25, 'USB Flash  SD Card памети/изтеглен файл-fotor-bg-remover-20250107234028.png', 'USB Flash 2 е идеален за архивиране на музика и данни, с висока преносимост.')">
+        <h2>USB Flash 2</h2>
+        <img src="USB Flash  SD Card памети/изтеглен файл-fotor-bg-remover-20250107234028.png" alt="USB Flash 2">
+        <p>Цена: 25лв</p>
+        <button class="buy-button" onclick="event.stopPropagation(); openModal('USB Flash 2', 25, 'images/usb2.jpg', 'USB Flash 2 е идеален за архивиране на музика и данни, с висока преносимост.')">Купи</button>
+    </div>
+</div>
+
+
+<div class="products" id="tables" style="display: none;">
+    <div class="product" onclick="openModal('Маса 1', 300, 'DJ маси - пултове/u91072bl_feature02-4c969a8c-fotor-bg-remover-20250107234210.png', 'Маса 1 предлага стабилна платформа за всякакви DJ оборудования.')">
+        <h2>Маса 1</h2>
+        <img src="DJ маси - пултове/u91072bl_feature02-4c969a8c-fotor-bg-remover-20250107234210.png" alt="Маса 1">
+        <p>Цена: 300лв</p>
+        <button class="buy-button" onclick="event.stopPropagation(); openModal('Маса 1', 300, 'images/table1.jpg', 'Маса 1 предлага стабилна платформа за всякакви DJ оборудования.')">Купи</button>
+    </div>
+    <div class="product" onclick="openModal('Маса 2', 350, 'DJ маси - пултове/u91072wh_main_08-5a8840cc-fotor-bg-remover-20250107234225.png', 'Маса 2 е проектирана с висока функционалност и удобство за DJ сесии.')">
+        <h2>Маса 2</h2>
+        <img src="DJ маси - пултове/u91072wh_main_08-5a8840cc-fotor-bg-remover-20250107234225.png" alt="Маса 2">
+        <p>Цена: 350лв</p>
+        <button class="buy-button" onclick="event.stopPropagation(); openModal('Маса 2', 350, 'images/table2.jpg', 'Маса 2 е проектирана с висока функционалност и удобство за DJ сесии.')">Купи</button>
+    </div>
+</div>
+
+
+<div class="products" id="accessories" style="display: none;">
+    <div class="product" onclick="openModal('Аксесоар 1', 25, 'Аксесоари  резервни части/18351671_800-7d8ab4fd-fotor-bg-remover-20250107234353.png', 'Аксесоар 1 е съвместим с много DJ системи и предлага многофункционалност.')">
+        <h2>Аксесоар 1</h2>
+        <img src="Аксесоари  резервни части/18351671_800-7d8ab4fd-fotor-bg-remover-20250107234353.png" alt="Аксесоар 1">
+        <p>Цена: 25лв</p>
+        <button class="buy-button" onclick="event.stopPropagation(); openModal('Аксесоар 1', 25, 'images/accessory1.jpg', 'Аксесоар 1 е съвместим с много DJ системи и предлага многофункционалност.')">Купи</button>
+    </div>
+    <div class="product" onclick="openModal('Аксесоар 2', 35, 'Аксесоари  резервни части/819KSQEHJGL._AC_UF894,1000_QL80_-9b58bbc3-fotor-bg-remover-20250107234339.png', 'Аксесоар 2 предлага допълнителни функции за оптимизиране на вашето представление.')">
+        <h2>Аксесоар 2</h2>
+        <img src="Аксесоари  резервни части/819KSQEHJGL._AC_UF894,1000_QL80_-9b58bbc3-fotor-bg-remover-20250107234339.png" alt="Аксесоар 2">
+        <p>Цена: 35лв</p>
+        <button class="buy-button" onclick="event.stopPropagation(); openModal('Аксесоар 2', 35, 'images/accessory2.jpg', 'Аксесоар 2 предлага допълнителни функции за оптимизиране на вашето представление.')">Купи</button>
+    </div>
+</div>
+
+
+<div class="products" id="hearing" style="display: none;">
+    <div class="product" onclick="openModal('Защита 1', 40, 'Защита на слуха/Fender_ear_plugs_djshop-964d1afa-fotor-bg-remover-20250107234442.png', 'Защита 1 осигурява максимален комфорт и защита на слуха по време на дълги DJ сесии.')">
+        <h2>Защита 1</h2>
+        <img src="Защита на слуха/Fender_ear_plugs_djshop-964d1afa-fotor-bg-remover-20250107234442.png" alt="Защита 1">
+        <p>Цена: 40лв</p>
+        <button class="buy-button" onclick="event.stopPropagation(); openModal('Защита 1', 40, 'images/hearing1.jpg', 'Защита 1 осигурява максимален комфорт и защита на слуха по време на дълги DJ сесии.')">Купи</button>
+    </div>
+    <div class="product" onclick="openModal('Защита 2', 50, 'Защита на слуха/Тапи-8e9f0575-fotor-bg-remover-20250107234511.png', 'Защита 2 е проектирана със специален фокус върху безопасността и комфорта, идеална за всеки DJ.')">
+        <h2>Защита 2</h2>
+        <img src="Защита на слуха/Тапи-8e9f0575-fotor-bg-remover-20250107234511.png" alt="Защита 2">
+        <p>Цена: 50лв</p>
+        <button class="buy-button" onclick="event.stopPropagation(); openModal('Защита 2', 50, 'images/hearing2.jpg', 'Защита 2 е проектирана със специален фокус върху безопасността и комфорта, идеална за всеки DJ.')">Купи</button>
+    </div>
+</div>
+        </div>
+        <div id="random-products-container">
+            <h2>Случайни продукти</h2>
+            <div id="random-products" class="products"></div>
+            <div id="navigation-buttons">
+                <button id="prev-btn">Назад</button>
+                <button id="next-btn">Напред</button>
+            </div>
+        </div>
+        
+    </main>
+    
+
+    <div id="productModal" class="modal" style="display: none;"> 
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img id="modalImage" src="" alt="" />
+                </div>
+                <div class="modal-details">
+                    <h2 id="modalTitle"></h2>
+                    <p>Описание:</p> 
+                    <p id="modalDescription"></p>
+                    <h3 id="modalPrice"></h3>
+                    <label for="quantity">Количество:</label> 
+                    <div style="display: flex; align-items: center;">
+                        <button class="quantity-button" onclick="changeQuantity(-1)">-</button>
+                        <input type="number" id="quantity" value="1" min="1" style="width: 50px; text-align: center; margin: 0 5px;"> 
+                        <button class="quantity-button" onclick="changeQuantity(1)">+</button>
+                    </div>
+                    <button class="buy-button" onclick="addToCartFromModal()">Премести в кошница</button>
+                </div>
+            </div>
+            
+            
+            <h3 style="margin-top: 20px; color: white; border: 3px solid #05cff3; border-radius: 7px; text-align: center;">Случайни продукти</h3>
+            <div id="modal-random-products" class="products" style="margin-top: 10px; display: flex; flex-wrap: wrap; gap: 15px;"></div>
+            <div id="navigation-buttons" style="margin-top: 10px;">
+                <button id="prev-btn" onclick="updateModalDisplayedProducts('prev')">Назад</button>
+                <button id="next-btn" onclick="updateModalDisplayedProducts('next')">Напред</button>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="neon-footer">
+    <div class="footer-container">
+        <!-- Hakkımızda -->
+        <div class="footer-section about">
+            <h4>Hakkımızda</h4>
+            <p>DJ Store, profesyonel DJ ekipmanları, hizmetleri ve kursları ile müzik dünyasında fark yaratır.</p>
+            <p><i class="fas fa-map-marker-alt"></i> İstanbul, Türkiye</p>
+            <p><i class="fas fa-phone-alt"></i> +90 555 123 4567</p>
+            <p><i class="fas fa-envelope"></i> info@djstore.com</p>
+        </div>
+        
+        <!-- Hızlı Bağlantılar -->
+        <div class="footer-section links">
+            <h4>Hızlı Bağlantılar</h4>
+            <ul>
+                <li><a href="#">Anasayfa</a></li>
+                <li><a href="#">Ürünler</a></li>
+                <li><a href="#">Hizmetler</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">İletişim</a></li>
+            </ul>
+        </div>
+
+        <!-- Haber Bülteni -->
+        <div class="footer-section newsletter">
+            <h4>Haber Bültenimize Katılın</h4>
+            <p>En yeni ürünler ve kampanyalardan haberdar olun!</p>
+            <form action="#" method="post" class="newsletter-form">
+                <input type="email" placeholder="E-posta adresinizi girin" required>
+                <button type="submit">Abone Ol</button>
+            </form>
+        </div>
+
+        <!-- Sosyal Medya -->
+        <div class="footer-section social">
+            <h4>Bizi Takip Edin</h4>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2025 DJ Store. Tüm Hakları Saklıdır. | Tasarım: DJ Store Ekibi</p>
+    </div>
+</footer>
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

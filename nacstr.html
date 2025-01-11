@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kullanıcı Girişi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('backgr/1649696580-history-of-djing.avif') no-repeat center center/cover;
+            color: #333;
+        }
+
+        .container {
+            display: none;
+            text-align: center;
+        }
+
+        .container.active {
+            display: block;
+        }
+
+        .welcome-container, .form-container {
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(20px);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .welcome-container h1 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            animation: textGlow 1.5s infinite;
+            color: #fff;
+        }
+
+        @keyframes textGlow {
+            0%, 100% { text-shadow: 0 0 5px #fff, 0 0 10px #74ebd5, 0 0 20px #74ebd5; }
+            50% { text-shadow: 0 0 10px #fff, 0 0 15px #acb6e5, 0 0 30px #acb6e5; }
+        }
+
+        .open-form-btn {
+            background: linear-gradient(45deg, #3498db, #2ecc71);
+            color: white;
+            font-size: 16px;
+            padding: 12px 25px;
+            border-radius: 10px;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 4px 10px rgba(52, 152, 219, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .open-form-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(46, 204, 113, 0.7);
+        }
+
+        .open-form-btn:active {
+            transform: translateY(1px);
+            box-shadow: 0 2px 5px rgba(46, 204, 113, 0.4);
+        }
+
+        h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #cccccc4b;
+            border-radius: 5px;
+            font-size: 16px;
+            outline: none;
+            transition: box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
+        }
+
+        input:focus {
+            box-shadow: 0 0 15px 4px rgba(0, 191, 255, 0.9);
+            border-color: rgba(0, 191, 255, 0.9);
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background: #4CAF50;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #45a049;
+        }
+
+        @media (max-width: 480px) {
+            .form-container {
+                padding: 15px 20px;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+
+            h2 {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container welcome-container active" id="welcomeContainer">
+        <h1>Добре дошли</h1>
+        <button class="open-form-btn" id="openFormButton">Влез</button>
+    </div>
+
+    
+    <div class="container form-container" id="formContainer">
+        <h2>Потребителски форум</h2>
+
+        <form id="registerForm" action="register.php" method="POST">
+            <h2>Регистрирай се</h2>
+            <input type="text" name="username" placeholder="Име" required>
+            <input type="password" name="password" placeholder="Парола" required>
+            <button type="submit">Регистрирай се</button>
+        </form>
+
+        <form id="loginForm" action="login.php" method="POST">
+            <h2>Влез</h2>
+            <input type="text" name="username" placeholder="Име" required>
+            <input type="password" name="password" placeholder="Парола" required>
+            <button type="submit">Влез</button>
+        </form>
+    </div>
+
+    <script>
+        const openFormButton = document.getElementById('openFormButton');
+        const formContainer = document.getElementById('formContainer');
+        const welcomeContainer = document.getElementById('welcomeContainer');
+
+        openFormButton.addEventListener('click', () => {
+            welcomeContainer.classList.remove('active');
+            formContainer.classList.add('active');
+        });
+
+        window.addEventListener('popstate', () => {
+            if (!welcomeContainer.classList.contains('active')) {
+                formContainer.classList.remove('active');
+                welcomeContainer.classList.add('active');
+            }
+        });
+
+        
+        openFormButton.addEventListener('click', () => {
+            history.pushState({}, 'Form', '#form');
+        });
+    </script>
+</body>
+</html>
